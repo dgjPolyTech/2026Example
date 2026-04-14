@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class Chap05_01Controller {
-
-
     @GetMapping("/chap0501") // 괄호 안의 지구본 모양 클릭하면, 요청 url 양식 복붙해서 받을 수 있음.
     public String requestMethod(@RequestParam("id") String userId,
                                 @RequestParam("pwd") String userPwd,
