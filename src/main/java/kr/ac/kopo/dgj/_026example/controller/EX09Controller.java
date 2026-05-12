@@ -18,13 +18,13 @@ public class EX09Controller {
 
     @PostMapping("/member")
     public String requestFormResult(@ModelAttribute Member member, Model model){
-    //    model.addAttribute("member", member);
+        model.addAttribute("member", member);
         return "signUpResult";
     }
 
     @InitBinder
     public void initBinder(WebDataBinder binder){
-        // binder.setAllowedFields("id", "city", "hobby");
+        binder.setAllowedFields("id", "city", "hobby");
         binder.setDisallowedFields("passwd", "city");
     }
 }

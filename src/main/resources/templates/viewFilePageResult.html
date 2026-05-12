@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chap07</title>
+</head>
+<body>
+  <h1 th:text="${title}"></h1>
+  <p>원본파일이름: <span th:text="${originFileName}"/></p>
+  <p>컴퓨터저장파일이름: <span th:text="${saveFileName}"/></p>
+  <p><img th:src="'/images/' + ${saveFileName}" width="250"/></p>
+</body>
+</html>
