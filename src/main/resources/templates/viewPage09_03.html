@@ -13,7 +13,7 @@
 </head>
 <body>
     <h2>3. Validator 구현체 유형 유효성 검사</h2>
-    <form th:object="${person}" action="/exam09_02" method="post">
+    <form th:object="${person}" action="/exam09_03" method="post">
         <p>성명: <input type="text" name="name" th:field="*{name}"> <span th:errors="*{name}"> </span></p>
         <p>나이: <input type="text" name="age" th:field="*{age}"> <span th:errors="*{age}"> </span></p>
         <p>이메일: <input type="text" name="email" th:field="*{email}"> <span th:errors="*{email}"> </span></p>
