@@ -21,9 +21,9 @@ public class SecurityConfiguration {
     @Bean
     SecurityFilterChain examMethod01(HttpSecurity http){
         http.authorizeHttpRequests(authorize -> authorize
-                .requestMatchers("/member/**").hasAnyRole("USER", "ADMIN")
-                .requestMatchers("/manager/**").hasAnyRole("USER", "ADMIN")
-                .requestMatchers("/admin/**").hasRole("ADMIN")
+                .requestMatchers("/exam10_01/member/**").hasAnyRole("USER", "ADMIN")
+                .requestMatchers("/exam10_01/manager/**").hasRole("MANAGER")
+                .requestMatchers("/exam10_01/admin/**").hasRole("ADMIN")
                 .anyRequest().permitAll()
         ).formLogin(Customizer.withDefaults());
 
@@ -46,7 +46,7 @@ public class SecurityConfiguration {
         UserDetails manager = User.builder()
                 .username("manager")
                 .password(passwordEncoder().encode("m1234"))
-                .roles("USER")
+                .roles("MANAGER")
                 .build();
 
         UserDetails admin = User.builder()
@@ -55,6 +55,6 @@ public class SecurityConfiguration {
                 .roles("ADMIN")
                 .build();
 
-        return new InMemoryUserDetailsManager(user, manager);
+        return new InMemoryUserDetailsManager(user, manager, admin);
     }
 }
