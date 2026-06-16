@@ -74,4 +74,14 @@ public class Chap10_01Controller {
 
         return "viewPage10_03.html";
     }
+
+    @GetMapping("/exam04")
+    public String requestMethod10(Model model) {
+        return "viewPage10_04";
+    }
+
+    @GetMapping("/admin/tag")
+    public String requestMethod11(Model model) {
+        return "viewPage10_04";
+    }
 }
