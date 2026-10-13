@@ -4,7 +4,6 @@ import kr.ac.kopo.dgj._026example.domain.Member3;
 import kr.ac.kopo.dgj._026example.repository.Member3Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +20,7 @@ public class Chap14_01Controller {
     public String viewHomePage(Model model){
         Iterable<Member3> memberList = repository.findAll();
         model.addAttribute("memberList", memberList);
-        return "viewPage02";
+        return "viewPage03";
     }
 
     // Create를 위한 입력 화면
@@ -29,7 +28,7 @@ public class Chap14_01Controller {
     public String newMember3(Model model){
         Member3 member3 = new Member3();
         model.addAttribute("member", member3);
-        return "viewPage02_new";
+        return "viewPage03_new";
     }
 
     // Create(insert) 실행
